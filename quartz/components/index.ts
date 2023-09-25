@@ -16,6 +16,7 @@ import Backlinks from "./Backlinks"
 import Search from "./Search"
 import Footer from "./Footer"
 import DesktopOnly from "./DesktopOnly"
+import onlyOn from "./onlyOn"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 
@@ -37,6 +38,7 @@ export {
   Search,
   Footer,
   DesktopOnly,
+  onlyOn,
   MobileOnly,
   RecentNotes,
   NotFound,
