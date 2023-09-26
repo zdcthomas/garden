@@ -10,6 +10,9 @@ function recentDir(dir: string, title: string) {
     linkToMore: `${dir}/` as SimpleSlug,
   })
 }
+const yak_shed = recentDir("tales_from_the_yak_shed", "Tales From the Yak Shed")
+const blog = recentDir("blog", "Blog")
+const notes = recentDir("notes", "My Personal Wiki")
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -21,16 +24,16 @@ export const sharedPageComponents: SharedLayout = {
     }),
     Component.onlyOn({
       slugs: ["index"],
-      component: recentDir("tales_from_the_yak_shed", "Tales From the Yak Shed"),
+      component: yak_shed,
     }),
 
     Component.onlyOn({
       slugs: ["index"],
-      component: recentDir("blog", "Blog"),
+      component: blog,
     }),
     Component.onlyOn({
       slugs: ["index"],
-      component: recentDir("notes", "My Personal Wiki"),
+      component: notes,
     }),
   ],
   footer: Component.Footer({
@@ -58,20 +61,17 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(
-      Component.RecentNotes({
-        title: "Tales From the Yak Shed",
-        limit: 1,
-        filter: (f) => f.slug!.startsWith("tales_from_the_yak_shed/"),
-        linkToMore: "tales_from_the_yak_shed/" as SimpleSlug,
+      Component.onlyOn({
+        slugs: ["index"],
+        component: yak_shed,
+        exclude: true,
       }),
     ),
     Component.DesktopOnly(
-      Component.RecentNotes({
-        title: "Recent Writing",
-        limit: 1,
-        filter: (f) =>
-          f.slug!.startsWith("blog/") && f.slug! !== "blog/index" && !f.frontmatter?.noindex,
-        linkToMore: "blog/" as SimpleSlug,
+      Component.onlyOn({
+        slugs: ["index"],
+        component: blog,
+        exclude: true,
       }),
     ),
   ],
