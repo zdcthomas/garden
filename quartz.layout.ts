@@ -22,19 +22,6 @@ export const sharedPageComponents: SharedLayout = {
       slugs: ["index"],
       component: Component.ArticleTitle(),
     }),
-    Component.onlyOn({
-      slugs: ["index"],
-      component: yak_shed,
-    }),
-
-    Component.onlyOn({
-      slugs: ["index"],
-      component: blog,
-    }),
-    Component.onlyOn({
-      slugs: ["index"],
-      component: notes,
-    }),
   ],
   footer: Component.Footer({
     links: {
@@ -50,6 +37,19 @@ export const defaultContentPageLayout: PageLayout = {
       slugs: ["index"],
       component: Component.ArticleTitle(),
       exclude: true,
+    }),
+    Component.onlyOn({
+      slugs: ["index"],
+      component: yak_shed,
+    }),
+
+    Component.onlyOn({
+      slugs: ["index"],
+      component: blog,
+    }),
+    Component.onlyOn({
+      slugs: ["index"],
+      component: notes,
     }),
     Component.ContentMeta(),
     Component.TagList(),
@@ -153,12 +153,12 @@ export const defaultListPageLayout: PageLayout = {
         drag: true,
         zoom: true,
         depth: -1,
-        scale: 0.9,
-        repelForce: 0.5,
+        scale: 10,
+        repelForce: 0.3,
         centerForce: 0.3,
         linkDistance: 30,
-        fontSize: 0.6,
-        opacityScale: 1,
+        fontSize: 1.5,
+        opacityScale: 0.7,
       },
     }),
   ],
