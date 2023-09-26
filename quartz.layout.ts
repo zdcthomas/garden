@@ -20,7 +20,16 @@ export const sharedPageComponents: SharedLayout = {
   header: [
     Component.onlyOn({
       slugs: ["index"],
-      component: Component.ArticleTitle(),
+      component: yak_shed,
+    }),
+
+    Component.onlyOn({
+      slugs: ["index"],
+      component: blog,
+    }),
+    Component.onlyOn({
+      slugs: ["index"],
+      component: notes,
     }),
   ],
   footer: Component.Footer({
@@ -33,24 +42,7 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.onlyOn({
-      slugs: ["index"],
-      component: Component.ArticleTitle(),
-      exclude: true,
-    }),
-    Component.onlyOn({
-      slugs: ["index"],
-      component: yak_shed,
-    }),
-
-    Component.onlyOn({
-      slugs: ["index"],
-      component: blog,
-    }),
-    Component.onlyOn({
-      slugs: ["index"],
-      component: notes,
-    }),
+    Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
     Component.TableOfContents(),
