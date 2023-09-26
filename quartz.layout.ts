@@ -63,6 +63,12 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(
       Component.onlyOn({
         slugs: ["index"],
+        component: Component.Explorer(),
+      }),
+    ),
+    Component.DesktopOnly(
+      Component.onlyOn({
+        slugs: ["index"],
         component: yak_shed,
         exclude: true,
       }),
