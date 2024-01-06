@@ -20,16 +20,11 @@ export const sharedPageComponents: SharedLayout = {
   header: [
     Component.onlyOn({
       slugs: ["index"],
-      component: yak_shed,
-    }),
-
-    Component.onlyOn({
-      slugs: ["index"],
       component: blog,
     }),
     Component.onlyOn({
       slugs: ["index"],
-      component: notes,
+      component: yak_shed,
     }),
   ],
   footer: Component.Footer({
